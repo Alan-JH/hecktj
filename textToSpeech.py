@@ -12,7 +12,7 @@ CHUNK = 1024
 if len(sys.argv) < 2:
     sys.exit(-1)
 PyAudio = pyaudio
-language = 'es'
+language = 'en'
 
 if sys.argv[1][-3] == '.wav':
     print("Inputted a file.")
