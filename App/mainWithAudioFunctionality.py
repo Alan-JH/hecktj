@@ -3,7 +3,7 @@ from predict import Predictor
 
 import speech_recognition as sr
 import pyaudio
-
+import pandas as pd
 
 import pyaudio
 import wave

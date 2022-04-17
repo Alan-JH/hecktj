@@ -2,6 +2,7 @@ from tensorflow import keras
 from data import DISEASES, SYMPTOMS
 from sentence_transformers import SentenceTransformer, util
 import numpy as np
+import 
 
 class Predictor:
     MODELNAME = "10Epoch"
@@ -16,7 +17,13 @@ class Predictor:
         this is basically a really bad way of trying to determine what symptoms a person has based on the text we get from their speech.
         """
         badTextSymptomsFound = set()
-        stupid_model = SentenceTransformer('distilbert-base-nli-mean-tokens')
+        try:
+            stupid_model = SentenceTransformer('distilbert-base-nli-mean-tokens')
+        except HTTPError as e:
+            print(e)
+            time.sleep(.5)
+            print("trying again")
+            stupid_model = SentenceTransformer('distilbert-base-nli-mean-tokens')
         sentences = SYMPTOMS.copy()
         sentences.insert(0,badText)
         sentence_embeddings = stupid_model.encode(sentences)
