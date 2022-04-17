@@ -7,24 +7,24 @@
 
 **Instructions To Run On Mac**
 
-Locate run.command in the App Folder
-Inside the file edit the given path to the path where the "App" folder is located.
-Open terminal and cd into the App Folder
-type chmod +x run.command
-Software is now setup!
-Simply click run.command to test out our application
+1. Locate run.command in the App Folder
+2. Inside the file edit the given path to the path where the "App" folder is located.
+3. Open terminal and cd into the App Folder
+4. type chmod +x run.command
+5. Software is now setup!
+6. Simply click run.command to test out our application
 
 **Instructions To Run On Windows**
 
-Locate the run.bat file in the App Folder
-Software is now setup!
-Double click this file to test our our application
+1. Locate the run.bat file in the App Folder
+2. Software is now setup!
+3. Double click this file to test our our application
 
 **Instructions To Run On Linux**
 
-Locate the run.sh file in the App Folder
-Software is now setup!
-Double click this file to test our our application
+1. Locate the run.sh file in the App Folder
+2. Software is now setup!
+3. Double click this file to test our our application
 
 
 
