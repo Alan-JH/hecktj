@@ -83,121 +83,22 @@ def main():
     PyAudio = pyaudio
     language = 'en'
 
+    with open("diagnosis.txt","a") as f:
+        for o in output:
+            f.write("\n If you think you have ",o[0],"then we reccomend that you take the following precaution \n")
+            f.write((symptomPrecaution.loc[symptomPrecaution['Disease']==o[0]]).iat[0,1])
+            f.write("\n What is ",o[0],"exactly, you may ask. Well, I'd be glad to tell you! \n")
+            f.write((symptomDescription.loc[symptomDescription['Disease']==o[0]]).iat[0,1])
+            
+
+    with open('diagnosis.txt', 'r') as f:
+        inpText = f.read().replace('\n', ' ')
+
     with open("diagnosis.txt", "r") as f:
         inpText = f.read().replace('\n', ' ')
         inputText = inpText
-        print("1")
         speechObj = gTTS(text=inputText,lang=language,slow=False)
-        print("2")
         speechObj.save("outputVoice.mp3")
-        print("3")
         subprocess.call(['ffmpeg', '-y', '-i', 'outputVoice.mp3', 'outputVoice.wav'])
-        print("4")
         playsound('outputVoice.wav')
-        print("5")
         wavFile = wave.open("outputVoice.wav",'rb')
-        print("6")
-
-    #p = pyaudio.PyAudio()
-
-    print("7")
-    #stream = p.open(format=p.get_format_from_width(wavFile.getsampwidth()),
-    #                    channels=wavFile.getnchannels(),
-    #                    rate=wavFile.getframerate(),
-    #                    output=True)
-
-    print("8")
-    #data = wavFile.readframes(CHUNK)
-
-    print("9")
-    #while data != '':
-    #        stream.write(data)
-    #        data = wavFile.readframes(CHUNK)
-
-    #stream.stop_stream()
-    #stream.close()
-
-    #p.terminate()
-
-    ##########
-
-
-
-
-
-    with open("diagnosis.txt","w+") as f:
-        for o in output:
-            f.write("\n Would you like to hear a description of "+ o[0] + " and a reccomeneded precaution to take when dealing with it? Please just say yes, or no.")
-            # f.write("\n If you think you have " + o[0] + "then we reccomend that you take the following precaution \n")
-            # f.write((symptomPrecaution.loc[symptomPrecaution['Disease']==o[0]]).iat[0,1])
-            # f.write("\n What is " + o[0] + "exactly, you may ask. Well, I'd be glad to tell you! \n")
-            # f.write((symptomDescription.loc[symptomDescription['Disease']==o[0]]).iat[0,1])
-            inpText = f.read().replace('\n', ' ')
-
-
-
-            #########
-
-            CHUNK = 1024
-
-            PyAudio = pyaudio
-            language = 'en'
-
-
-            inputText = inpText
-            speechObj = gTTS(text=inputText,lang=language,slow=False)
-            speechObj.save("outputVoice.mp3")
-            subprocess.call(['ffmpeg', '-y', '-i', 'outputVoice.mp3', 'outputVoice.wav'])
-            playsound('outputVoice.wav')
-            wavFile = wave.open("outputVoice.wav",'rb')
-
-            p = pyaudio.PyAudio()
-
-            stream = p.open(format=p.get_format_from_width(wavFile.getsampwidth()),
-                                channels=wavFile.getnchannels(),
-                                rate=wavFile.getframerate(),
-                                output=True)
-
-            data = wavFile.readframes(CHUNK)
-
-            while data != '':
-                    stream.write(data)
-                    data = wavFile.readframes(CHUNK)
-
-            stream.stop_stream()
-            stream.close()
-
-            p.terminate()
-
-            done = False
-            print(time.perf_counter())
-            r = sr.Recognizer()
-            print(time.perf_counter())
-            while done == False:
-                with sr.Microphone() as source:
-                    print(time.perf_counter())
-                    print("Recording")
-                    # read the audio data from the default microphone
-                    audio_data = r.record(source, duration=5)
-                    print("Recognizing...")
-                    # convert speech to text
-                    try:
-                        text = r.recognize_google(audio_data)
-                        done = True
-                    except:
-                        pass
-            
-            if text.lower() == "yes":
-                f.truncate(0)
-                f.seek(0)
-                f.write("\n If you think you have " + o[0] + "then we reccomend that you take the following precaution \n")
-                f.write((symptomPrecaution.loc[symptomPrecaution['Disease']==o[0]]).iat[0,1])
-                f.write("\n What is " + o[0] + "exactly, you may ask. Well, I'd be glad to tell you! \n")
-                f.write((symptomDescription.loc[symptomDescription['Disease']==o[0]]).iat[0,1])
-            else:
-                f.truncate(0)
-                f.seek(0)
-
-        
-        
-
