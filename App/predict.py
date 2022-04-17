@@ -1,6 +1,5 @@
 from tensorflow import keras
 from data import DISEASES, SYMPTOMS
-import nltk
 from sentence_transformers import SentenceTransformer, util
 import numpy as np
 
