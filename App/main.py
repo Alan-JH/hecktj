@@ -124,7 +124,7 @@ print("9")
 
 
 
-with open("diagnosis.txt","r") as f:
+with open("diagnosis.txt","w+") as f:
     for o in output:
         f.write("\n Would you like to hear a description of "+ o[0] + " and a reccomeneded precaution to take when dealing with it? Please just say yes, or no.")
         # f.write("\n If you think you have " + o[0] + "then we reccomend that you take the following precaution \n")
