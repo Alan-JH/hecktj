@@ -82,7 +82,7 @@ CHUNK = 1024
 PyAudio = pyaudio
 language = 'en'
 
-with open("diagnosis.txt", "r"):
+with open("diagnosis.txt", "r") as f:
     inpText = f.read().replace('\n', ' ')
     inputText = inpText
     speechObj = gTTS(text=inputText,lang=language,slow=False)
