@@ -7,19 +7,19 @@ We were inspired by voice assistants like Alexa and Siri and wanted to put a hum
 The project takes spoken symptoms of a patient as input and uses a machine learning model to diagnose diseases. The app responds with a reiteration of all of the symptoms and lists the three most probable diseases associated with the symptoms alongside their respective probabilities. The app also gives descriptions of the diseases and the overall severity of the user's current condition.
 
 ## How we built it
-We used Tensorflow to train the machine learning model that predicts diseases based on symptoms of a patient. We used python tkinter to 
+We used Tensorflow to train the machine learning model that predicts diseases based on symptoms of a patient. We also used python tkinter for our graphical interface. Several other libraries, like speech_recognition and pyaudio were also used to make our project a success.
 
 ## Challenges we ran into
-We initially planned on hosting our project on a website, but due to the lack of sufficient cpu and ram when using a free repl.it account, we were unable to implement the machine learning aspect of our project into our website. We had to completely rework our user interface and instead switched to an app. 
+We initially planned on hosting our project on a website, but due to the lack of sufficient cpu and ram when using a free repl.it account, we were unable to implement the machine learning aspect of our project into our website. We had to completely rework our user interface and instead switched to an app.
 
 ## Accomplishments that we're proud of
-We are proud that everything came together and we were able to succesfully create a helpful product. We hope that the product will be useful and help those who are sick get the medical attention they need. 
+We are proud that everything came together and we were able to succesfully create a helpful product. We hope that the product will be useful and help those who are sick get the medical attention they need. Although our prediction algorithm is far from perfect we believe what we accomplished during the 24 hour time limit is quite commendable. 
 
 ## What we learned
-While some of our members were experienced in machine learning algorithms the others had to learn as we went. None of us were very experienced in graphic design as well, so we learned a lot as we designed the application and front end for the user. We also learned how important efficiency is in coding as we experienced firsthand the issues of memory shortage.
+While some of our members were experienced in machine learning algorithms the others had to learn as we went. None of us were very experienced in graphic design as well, so we learned a lot as we designed the front end for the user. We also learned how important efficiency is in coding as we experienced firsthand the issues of memory shortage when we had to switch to a python application.
 
 ## What's next for Health Honk
-Shark Tank 
+We would love to continue developing our product into a more compact app in the future. We also need to increase the overall accuracy of our disease detection algorithm. We see our technology as being the Amazon Alexa of the healthcare industry and we are excited to see where this mission will take us!
 
 # Instructions For Installation:
 
