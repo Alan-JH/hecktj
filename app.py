@@ -37,22 +37,17 @@ def goHome():
    homeButton.place(x=10, y=10)
    aboutButton.place(x=150, y=10)
    recordButton.place(x=width // 2, y=height * (9 / 11), anchor=S)
+   canvas.create_image(width // 2, height // 8, anchor=N, image=img)
 
 def goAbout():
-
-   hImg = Image.open("HomeButton.png").resize((120, 54))
-   aImg = Image.open("AboutImage.png").resize((120, 54))
-   homeImage = ImageTk.PhotoImage(hImg)
-   aboutImage = ImageTk.PhotoImage(aImg)
-   recordImage = ImageTk.PhotoImage(rImg)
+   canvas.delete('all')
    homeButton = Button(root, image=homeImage, command=goHome)
    aboutButton = Button(root, image=aboutImage, command=goAbout)
    homeButton.place(x=10, y=10)
    aboutButton.place(x=150, y=10)
 
-
 def record():
-   os.system("python App/main.py")
+   os.system("python3 App/main.py")
 
 
 homeButton = Button(root, image=homeImage, command=goHome)
