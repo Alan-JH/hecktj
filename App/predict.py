@@ -2,7 +2,7 @@ from tensorflow import keras
 from data import DISEASES, SYMPTOMS
 from sentence_transformers import SentenceTransformer, util
 import numpy as np
-import 
+import time
 
 class Predictor:
     MODELNAME = "10Epoch"
