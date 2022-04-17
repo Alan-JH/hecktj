@@ -1,3 +1,25 @@
+# About HealthHonk
+
+## Inspiration
+We were inspired by voice assistants like Alexa and Siri and wanted to put a humanitarian twist on it. Thus sparked the idea of helping give medical advice with a voice assistant. 
+
+## What it does
+The project takes spoken symptoms of a patient as input and uses a machine learning model to diagnose diseases. The app responds with a reiteration of all of the symptoms and lists the three most probable diseases associated with the symptoms alongside their respective probabilities. The app also gives descriptions of the diseases and the overall severity of the user's current condition.
+
+## How we built it
+We used Tensorflow to train the machine learning model that predicts diseases based on symptoms of a patient. We used python tkinter to 
+
+## Challenges we ran into
+We initially planned on hosting our project on a website, but due to the lack of sufficient cpu and ram when using a free repl.it account, we were unable to implement the machine learning aspect of our project into our website. We had to completely rework our user interface and instead switched to an app. 
+
+## Accomplishments that we're proud of
+We are proud that everything came together and we were able to succesfully create a helpful product. We hope that the product will be useful and help those who are sick get the medical attention they need. 
+
+## What we learned
+While some of our members were experienced in machine learning algorithms the others had to learn as we went. None of us were very experienced in graphic design as well, so we learned a lot as we designed the application and front end for the user. We also learned how important efficiency is in coding as we experienced firsthand the issues of memory shortage.
+
+## What's next for Health Honk
+Shark Tank 
 
 # Instructions For Installation:
 
