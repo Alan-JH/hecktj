@@ -1,3 +1,34 @@
+
+**Instructions For Installation:**
+
+1. Install the file titled _App.zip_
+2. Unzip the App.zip file
+3. Run install.sh or install.bat based on operating system to install dependencies like tensorflow or install them on your own.
+
+**Instructions To Run On Mac**
+
+Locate run.command in the App Folder
+Inside the file edit the given path to the path where the "App" folder is located.
+Open terminal and cd into the App Folder
+type chmod +x run.command
+Software is now setup!
+Simply click run.command to test out our application
+
+**Instructions To Run On Windows**
+
+Locate the run.bat file in the App Folder
+Software is now setup!
+Double click this file to test our our application
+
+**Instructions To Run On Linux**
+
+Locate the run.sh file in the App Folder
+Software is now setup!
+Double click this file to test our our application
+
+
+Comments From Design Process **DISREGARD FOR INSTALLATION INSTRUCTIONS**
+
 # hecktj
 like, heccin tj, amirite dudes? totalllyyyyyy....
 
