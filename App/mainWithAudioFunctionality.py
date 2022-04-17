@@ -61,8 +61,11 @@ symptomPrecaution = pd.read_csv('Data/symptom_precaution.csv')
 
 with open("diagnosis.txt","a") as f:
     for o in output:
-        f.write((symptomDescription.loc[symptomDescription['Disease']==o[0]]).iat[0,1])
+        f.write("\n If you think you have ",o[0],"then we reccomend that you take the following precaution \n")
         f.write((symptomPrecaution.loc[symptomPrecaution['Disease']==o[0]]).iat[0,1])
+        f.write("\n What is ",o[0],"exactly, you may ask. Well, I'd be glad to tell you! \n")
+        f.write((symptomDescription.loc[symptomDescription['Disease']==o[0]]).iat[0,1])
+        
 
 with open('diagnosis.txt', 'r') as f:
     inpText = f.read().replace('\n', ' ')
