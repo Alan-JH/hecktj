@@ -13,7 +13,7 @@ import time
 
 from gtts import gTTS
 from playsound import playsound
-import os, time
+import os, time, subprocess
 
 done = False
 print(time.perf_counter())
