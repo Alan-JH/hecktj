@@ -20,6 +20,7 @@ print(time.perf_counter())
 while done == False:
     with sr.Microphone() as source:
         print(time.perf_counter())
+        print("Recording")
         # read the audio data from the default microphone
         audio_data = r.record(source, duration=5)
         print("Recognizing...")
