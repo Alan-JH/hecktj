@@ -53,7 +53,7 @@ avgseverity = sum([SEVERITY[i] for i in symptoms])/len(symptoms)
 if avgseverity > SEVERE_THRESHOLD:
     if avgseverity > 8:
         print("You are going to die", file = open("diagnosis.txt"))
-    else if avgseverity > 5:
+    elif avgseverity > 5:
         print("These are severe symptoms", file = open("diagnosis.txt"))
     else:
         print("These are moderate symptoms", file = open("diagnosis.txt"))
