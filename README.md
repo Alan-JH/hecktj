@@ -1,11 +1,11 @@
 
 # Instructions For Installation:
 
-1. Install the file titled _App.zip_
+1. Install the file titled App.zip from this google drive link: https://drive.google.com/drive/folders/1O6LatkEwcmqst92ecunQLtyf0rK1oCoo?usp=sharing
 2. Unzip the App.zip file
 3. Run install.sh or install.bat based on operating system to install dependencies like tensorflow or install them on your own.
 
-**Instructions To Run On Mac**
+**Instructions To Run On Mac***
 
 1. Locate run.command in the App Folder
 2. Inside the file edit the given path to the path where the "App" folder is located.
@@ -20,13 +20,13 @@
 2. Software is now setup!
 3. Double click this file to test our our application
 
-**Instructions To Run On Linux**
+**Instructions To Run On Linux***
 
 1. Locate the run.sh file in the App Folder
 2. Software is now setup!
 3. Double click this file to test our our application
 
-
+*Mac and Linux Versions Require homebrew installation: https://brew.sh/
 
 
 # hecktj
