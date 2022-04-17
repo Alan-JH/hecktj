@@ -14,6 +14,7 @@ from gtts import gTTS
 from playsound import playsound
 import os, time
 
+done = False
 print(time.perf_counter())
 r = sr.Recognizer()
 print(time.perf_counter())
