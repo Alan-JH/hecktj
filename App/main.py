@@ -52,11 +52,14 @@ avgseverity = sum([SEVERITY[i] for i in symptoms])/len(symptoms)
 
 if avgseverity > SEVERE_THRESHOLD:
     if avgseverity > 8:
-        print("You are going to die", file = open("diagnosis.txt"))
+        with open("diagnosis.txt") as f:
+            f.write("These are extremely severe symptoms\n")
     elif avgseverity > 5:
-        print("These are severe symptoms", file = open("diagnosis.txt"))
+        with open("diagnosis.txt") as f:
+            f.write("These are severe symptoms\n")
     else:
-        print("These are moderate symptoms", file = open("diagnosis.txt"))
+        with open("diagnosis.txt") as f:
+            f.write("These are moderate symptoms\n")
 
     output = predictor.processOutput(list(predictor.predict(symptoms).flatten()))
 
