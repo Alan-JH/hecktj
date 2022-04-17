@@ -2,6 +2,7 @@ from tkinter import *
 from PIL import Image,ImageTk
 import copy
 import os
+from main import main
 
 c1,c2,c3,c4,c5 = '#2C4251','#D16666','#56CBF9','#A8C69F','#CCE2A3'
 
@@ -51,7 +52,7 @@ def goAbout():
    canvas.create_image(width//2,height//2+30,image = IAMSOHAPPYTHATIGETTOSLEEP)
 
 def record():
-   os.system("python3 App/main.py")
+   main()
 
 recordButton = Button(root, image=recordImage, command=record, borderwidth=0, fg='green')
 homeButton = Button(root, image=homeImage, command=goHome)
