@@ -308,3 +308,5 @@ SEVERITY = {
     'yellow crust ooze': 3, 
     'prognosis': 5
 }
+
+SEVERE_THRESHOLD = 2
