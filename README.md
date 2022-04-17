@@ -1,5 +1,5 @@
 
-**Instructions For Installation:**
+# Instructions For Installation:
 
 1. Install the file titled _App.zip_
 2. Unzip the App.zip file
@@ -27,9 +27,10 @@ Software is now setup!
 Double click this file to test our our application
 
 
-Comments From Design Process **DISREGARD FOR INSTALLATION INSTRUCTIONS**
+
 
 # hecktj
+Comments From Design Process **DISREGARD FOR INSTALLATION INSTRUCTIONS**
 like, heccin tj, amirite dudes? totalllyyyyyy....
 
 10Epoch: Folder with all saved model stuff
