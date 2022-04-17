@@ -74,7 +74,8 @@ def main():
         symptomDescription = pd.read_csv('Data/symptom_Description.csv')
         symptomPrecaution = pd.read_csv('Data/symptom_precaution.csv')
     else:
-        print("These are mild symptoms, moving on without diagnosis", file = open("diagnosis.txt"))
+        with open("diagnosis.txt", "a") as f:
+            f.write("These are mild symptoms, moving on without diagnosis\n")
 
     #########
 
