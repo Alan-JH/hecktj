@@ -90,33 +90,33 @@ with open("diagnosis.txt", "r") as f:
     print("2")
     speechObj.save("outputVoice.mp3")
     print("3")
-    subprocess.call(['ffmpeg', '-y -i', 'outputVoice.mp3', 'outputVoice.wav'])
+    subprocess.call(['ffmpeg', '-y', '-i', 'outputVoice.mp3', 'outputVoice.wav'])
     print("4")
     playsound('outputVoice.wav')
     print("5")
     wavFile = wave.open("outputVoice.wav",'rb')
     print("6")
 
-p = pyaudio.PyAudio()
+#p = pyaudio.PyAudio()
 
 print("7")
-stream = p.open(format=p.get_format_from_width(wavFile.getsampwidth()),
+#stream = p.open(format=p.get_format_from_width(wavFile.getsampwidth()),
                     channels=wavFile.getnchannels(),
                     rate=wavFile.getframerate(),
                     output=True)
 
 print("8")
-data = wavFile.readframes(CHUNK)
+#data = wavFile.readframes(CHUNK)
 
 print("9")
-while data != '':
-        stream.write(data)
-        data = wavFile.readframes(CHUNK)
+#while data != '':
+#        stream.write(data)
+#        data = wavFile.readframes(CHUNK)
 
-stream.stop_stream()
-stream.close()
+#stream.stop_stream()
+#stream.close()
 
-p.terminate()
+#p.terminate()
 
 ##########
 
@@ -146,7 +146,7 @@ with open("diagnosis.txt","w") as f:
         inputText = inpText
         speechObj = gTTS(text=inputText,lang=language,slow=False)
         speechObj.save("outputVoice.mp3")
-        subprocess.call(['ffmpeg', '-y -i', 'outputVoice.mp3', 'outputVoice.wav'])
+        subprocess.call(['ffmpeg', '-y', '-i', 'outputVoice.mp3', 'outputVoice.wav'])
         playsound('outputVoice.wav')
         wavFile = wave.open("outputVoice.wav",'rb')
 
