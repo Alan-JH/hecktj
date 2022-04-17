@@ -82,7 +82,7 @@ CHUNK = 1024
 PyAudio = pyaudio
 language = 'en'
 
-
+inpText = f.read().replace('\n', ' ')
 inputText = inpText
 speechObj = gTTS(text=inputText,lang=language,slow=False)
 speechObj.save("outputVoice.wav")
