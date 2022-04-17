@@ -12,18 +12,25 @@ import time
 
 from gtts import gTTS
 from playsound import playsound
-import os
+import os, time
 
-
+print(time.perf_counter())
 r = sr.Recognizer()
-with sr.Microphone() as source:
-    # read the audio data from the default microphone
-    audio_data = r.record(source, duration=5)
-    print("Recognizing...")
-    # convert speech to text
-    text = r.recognize_google(audio_data)
-    # text = " ".join(sys.argv[1:])
-    # print(text)
+print(time.perf_counter())
+while done == False:
+    with sr.Microphone() as source:
+        print(time.perf_counter())
+        # read the audio data from the default microphone
+        audio_data = r.record(source, duration=5)
+        print("Recognizing...")
+        # convert speech to text
+        try:
+            text = r.recognize_google(audio_data)
+            done = True
+        except:
+            pass
+        # text = " ".join(sys.argv[1:])
+        # print(text)
 
 #######
 
@@ -47,6 +54,19 @@ for o in output:
 with open("diagnosis.txt", "a") as f:
     f.write(result)
 
+symptomDescription = pd.read_csv('Data/symptom_Description.csv')
+symptomPrecaution = pd.read_csv('Data/symptom_precaution.csv')
+
+with open("diagnosis.txt","a") as f:
+    for output in outputs:
+        f.write((symptomDescription.loc[symptomDescription['Disease']==output]).iat[0,1])
+        f.write((symptomPrecaution.loc[symptomPrecaution['Disease']==output]).iat[0,1])
+
+with open('diagnosis.txt', 'r') as f:
+    inpText = f.read().replace('\n', ' ')
+
+
+
 
 #########
 
@@ -56,7 +76,7 @@ PyAudio = pyaudio
 language = 'en'
 
 
-inputText = result
+inputText = inpText
 speechObj = gTTS(text=inputText,lang=language,slow=False)
 speechObj.save("outputVoice.wav")
 playsound('outputVoice.wav')
