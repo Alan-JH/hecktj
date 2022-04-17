@@ -137,7 +137,7 @@ DISEASES = [
     'AIDS', 
     'Chronic cholestasis', 
     'Urinary tract infection', 
-    'Peptic ulcer diseae', 
+    'Peptic ulcer disease', 
     'Hepatitis B', 
     'Hypoglycemia', 
     'Migraine', 
