@@ -101,9 +101,9 @@ with open("diagnosis.txt", "r") as f:
 
 print("7")
 #stream = p.open(format=p.get_format_from_width(wavFile.getsampwidth()),
-                    channels=wavFile.getnchannels(),
-                    rate=wavFile.getframerate(),
-                    output=True)
+#                    channels=wavFile.getnchannels(),
+#                    rate=wavFile.getframerate(),
+#                    output=True)
 
 print("8")
 #data = wavFile.readframes(CHUNK)
