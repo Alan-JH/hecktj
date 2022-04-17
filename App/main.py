@@ -90,6 +90,8 @@ with open("diagnosis.txt", "r") as f:
     speechObj = gTTS(text=inputText,lang=language,slow=False)
     speechObj.save("outputVoice.wav")
     playsound('outputVoice.wav')
+    x,_ = librosa.load('./SA1.WAV', sr=16000)
+    sf.write('tmp.wav', x, 16000)
     wavFile = wave.open("outputVoice.wav",'rb')
 
 p = pyaudio.PyAudio()
