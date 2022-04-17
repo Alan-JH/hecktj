@@ -2,7 +2,6 @@ from tkinter import *
 from PIL import Image,ImageTk
 import copy
 import os
-from main import main
 
 c1,c2,c3,c4,c5 = '#2C4251','#D16666','#56CBF9','#A8C69F','#CCE2A3'
 
@@ -28,35 +27,38 @@ tImg = ImageTk.PhotoImage(Image.open("HealthHonkTitle.png").resize((350, 94)))
 homeImage = ImageTk.PhotoImage(hImg)
 aboutImage = ImageTk.PhotoImage(aImg)
 recordImage = ImageTk.PhotoImage(rImg)
+IAMSOHAPPYTHATIGETTOSLEEP = ImageTk.PhotoImage(Image.open("about.png").resize((600,672)))
 
 
 def goHome():
-   homeButton = Button(root, image=homeImage, command=goHome)
-   aboutButton = Button(root, image=aboutImage, command=goAbout)
-   recordButton = Button(root, image=recordImage, command=record, borderwidth=0, fg='green')
-   canvas.create_image(width // 2, height * (1 / 12), anchor=N, image=tImg)
-   homeButton.place(x=10, y=10)
-   aboutButton.place(x=150, y=10)
-   recordButton.place(x=width // 2, y=height * (9 / 11), anchor=S)
-   canvas.create_image(width // 2, height // 8, anchor=N, image=img)
-
-def goAbout():
    canvas.delete('all')
    homeButton = Button(root, image=homeImage, command=goHome)
    aboutButton = Button(root, image=aboutImage, command=goAbout)
+   recordButton = Button(root, image=recordImage, command=record, borderwidth=0, fg='green')
    homeButton.place(x=10, y=10)
    aboutButton.place(x=150, y=10)
+   recordButton.place(x=width // 2, y=height * (10/11), anchor=S)
+   canvas.create_image(width // 2, height // 8, anchor=N, image=img)
+   canvas.create_image(width // 2, height * (1 / 12), anchor=N, image=tImg)
+
+def goAbout():
+   canvas.delete('all')
+   recordButton.destroy()
+   homeButton = Button(root, image=homeImage, command=goHome)
+   aboutButton = Button(root, image=aboutImage, command=goAbout)
+   homeButton.place(x=10, y=10)
+   aboutButton.place(x=150, y=10)
+   canvas.create_image(width//2,height//2+30,image = IAMSOHAPPYTHATIGETTOSLEEP)
 
 def record():
-   main()
+   os.system("python3 App/main.py")
 
-
+recordButton = Button(root, image=recordImage, command=record, borderwidth=0, fg='green')
 homeButton = Button(root, image=homeImage, command=goHome)
 aboutButton = Button(root, image=aboutImage, command=goAbout)
-recordButton = Button(root, image=recordImage, command=record, borderwidth=0, fg='green')
 canvas.create_image(width // 2, height * (1 / 12), anchor=N, image=tImg)
 homeButton.place(x=10, y=10)
 aboutButton.place(x=150, y=10)
-recordButton.place(x=width // 2, y=height * (9 / 11), anchor=S)
+recordButton.place(x=width // 2, y=height * (10 / 11), anchor=S)
 
 root.mainloop()
