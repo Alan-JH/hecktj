@@ -10,8 +10,6 @@ import pyaudio
 import wave
 import sys
 import time
-import librosa
-import soundfile as sf
 
 from gtts import gTTS
 from playsound import playsound
@@ -88,10 +86,9 @@ with open("diagnosis.txt", "r") as f:
     inpText = f.read().replace('\n', ' ')
     inputText = inpText
     speechObj = gTTS(text=inputText,lang=language,slow=False)
-    speechObj.save("outputVoice.wav")
+    speechObj.save("outputVoice.mp3")
+    subprocess.call(['ffmpeg', '-i', 'outputVoice.mp3', 'outputVoice.wav'])
     playsound('outputVoice.wav')
-    x,_ = librosa.load('outputVoice.wav', sr=16000)
-    sf.write('tmp.wav', x, 16000)
     wavFile = wave.open("outputVoice.wav",'rb')
 
 p = pyaudio.PyAudio()
@@ -139,10 +136,9 @@ with open("diagnosis.txt","w") as f:
 
         inputText = inpText
         speechObj = gTTS(text=inputText,lang=language,slow=False)
-        speechObj.save("outputVoice.wav")
+        speechObj.save("outputVoice.mp3")
+        subprocess.call(['ffmpeg', '-i', 'outputVoice.mp3', 'outputVoice.wav'])
         playsound('outputVoice.wav')
-        x,_ = librosa.load('outputVoice.wav', sr=16000)
-        sf.write('tmp.wav', x, 16000)
         wavFile = wave.open("outputVoice.wav",'rb')
 
         p = pyaudio.PyAudio()
