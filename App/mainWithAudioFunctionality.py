@@ -43,6 +43,8 @@ for o in output:
     result += " " + o[0] + " (" + str(int(100*o[1])) + "%) "
 
 with open("diagnosis.txt", "w") as f:
+    f.write("We think you said the following" + text)
+    f.write("\n")
     f.write(result)
     f.write("\n")
 
